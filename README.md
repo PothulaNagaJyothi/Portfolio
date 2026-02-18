@@ -54,13 +54,4 @@ portfolio/
 └── README.md         # Project documentation
 ```
 
-## 📬 Contact
-
-Feel free to reach out to me!
-
-*   **Email:** [pothulanagajyothi2@gmail.com](mailto:pothulanagajyothi2@gmail.com)
-*   **LinkedIn:** [Naga Jyothi Pothula](https://www.linkedin.com/in/naga-jyothi-pothula)
-*   **GitHub:** [PothulaNagaJyothi](https://github.com/PothulaNagaJyothi)
-
----
 *© 2026 Pothula Naga Jyothi. All Rights Reserved.*
