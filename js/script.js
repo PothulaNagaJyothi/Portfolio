@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Typing Animation
     // -----------------------------------------------------
     const typingElement = document.querySelector('.typing-text');
-    const phrases = ["Full Stack Developer", "Building Clean & Efficient Web Applications", "UI/UX Enhancer"];
+    const phrases = ["Full Stack Developer", "PERN Stack Developer", "Building Clean & Efficient Web Applications"];
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

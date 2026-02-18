@@ -163,6 +163,7 @@ img {
     font-weight: 800;
     background: var(--gradient-text);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     left: 50%;
@@ -273,6 +274,7 @@ img {
     font-weight: 800;
     background: var(--gradient-text);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: var(--font-heading);
 }
@@ -437,6 +439,7 @@ img {
 .highlight {
     background: var(--gradient-text);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -597,6 +600,7 @@ img {
     font-size: 3rem;
     background: var(--gradient-text);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: var(--transition);
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
@@ -727,7 +731,7 @@ img {
 ========================================= */
 .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -748,7 +752,7 @@ img {
     margin-bottom: 60px;
     position: relative;
     width: 50%;
-    padding: 0 50px;
+    padding: 0 70px;
 }
 
 .timeline-item:nth-child(odd) {
@@ -788,10 +792,12 @@ img {
     box-shadow: 0 0 15px var(--secondary-color);
 }
 
+/* Ensure content inside the card is always left-aligned for readability */
 .timeline-content {
+    text-align: left;
     background: var(--card-bg);
     backdrop-filter: blur(16px);
-    padding: 25px;
+    padding: 35px;
     border-radius: var(--border-radius);
     border: var(--glass-border);
     box-shadow: var(--glass-shadow);
@@ -803,24 +809,55 @@ img {
     border-color: var(--primary-color);
 }
 
+.timeline-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    /* Add padding for bullets */
+    margin-top: 10px;
+}
+
+.timeline-content ul li {
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding-left: 5px;
+    /* Spacing between bullet and text */
+}
+
+/* Reset specific padding overrides that messed up alignment */
+.timeline-item:nth-child(odd) .timeline-content ul li,
+.timeline-item:nth-child(even) .timeline-content ul li {
+    padding-left: 5px;
+    padding-right: 0;
+}
+
 .timeline-date {
     color: var(--secondary-color);
     font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    /* Ensure date is also left aligned in card */
 }
 
 .timeline-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--primary-dark);
+}
+
+[data-theme="dark"] .timeline-content h3 {
+    color: var(--primary-light);
 }
 
 .timeline-content h4 {
     color: var(--text-light);
-    font-weight: 500;
-    margin-bottom: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 /* =========================================
@@ -834,7 +871,8 @@ img {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Increased min-width to ensure long emails fit */
     gap: 30px;
     background: var(--card-bg);
     backdrop-filter: blur(16px);
@@ -860,8 +898,9 @@ img {
     background: rgba(255, 255, 255, 0.05);
     justify-content: flex-start;
     /* Default alignment */
-    overflow: hidden;
-    /* Prevent spill */
+    /* Remove overflow: hidden to allow text wrapping */
+    word-break: break-all;
+    /* Ensures very long emails break if needed */
 }
 
 @media (max-width: 768px) {
